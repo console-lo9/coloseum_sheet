@@ -15,11 +15,11 @@ const ItemSheet = () => {
         </thead>
         <tbody>
           {MOCK_DATA.map((data, index) => (
-            <tr key={index}>
+            <Tr key={index}>
               {Object.values(data).map((value) => (
-                <td>{value}</td>
+                <Td>{value}</Td>
               ))}
-            </tr>
+            </Tr>
           ))}
         </tbody>
       </table>
@@ -30,4 +30,15 @@ const ItemSheet = () => {
 const TableHead = styled.th`
   padding-right: 10px;
 `;
+
+const Tr = styled.tr`
+  padding: 100px;
+`;
+
+const Td = styled.td`
+  padding-right: 20px;
+  text-align: center;
+  outline: solid black;
+`;
+
 export default ItemSheet;
