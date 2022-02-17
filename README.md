@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+<h1 align="center"> 상품 등록 과제 </h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h3 align="center"> 서비스 링크 : https://fervent-tereshkova-9b041a.netlify.app/</h3>
 
-## Available Scripts
+<p align="center"><img width="500" src="https://bit.ly/3HyINHE" /></p>
 
-In the project directory, you can run:
+## 👏 프로젝트 소개
 
-### `yarn start`
+> json-server 로 만든 가상의 서버에서 대화 목록을 가져와 대화 목록을 화면에 출력한 후
+> 대화에 참여한 사용자가 메시지를 전송할 수 있도록 하는 페이지 제작.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🙋‍♀️🙋‍♂️ 팀원
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+|                                           프로필                                           |                    이름                     | 담당 기능 |
+| :----------------------------------------------------------------------------------------: | :-----------------------------------------: | :-------- |
+| <img src="https://avatars.githubusercontent.com/Ubermensch0608" width="100" height="100"/> | [우종원](https://github.com/Ubermensch0608) |           |
+|  <img src="https://avatars.githubusercontent.com/crucial-sub" width="100" height="100"/>   |  [박중섭](https://github.com/crucial-sub)   |           |
+|    <img src="https://avatars.githubusercontent.com/ttaerrim" width="100" height="100"/>    |    [이태림](https://github.com/ttaerrim)    |           |
+|   <img src="https://avatars.githubusercontent.com/penguin311" width="100" height="100"/>   |   [임수영](https://github.com/penguin311)   |           |
 
-### `yarn test`
+## 🚀 스택
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`React`
 
-### `yarn build`
+## ⚙ 설치
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+# clone the project
+$ git clone https://github.com/console-lo9/README-TEMPLATE.git
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# install modules
+$ cd README-TEMPLATE
+$ npm ci || yarn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# start
+$ npm start || yarn start
 
-### `yarn eject`
+⠀
+⠀  You can now view this project in the browser.
+⠀  http://localhost:3000/
+⠀
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🔗 의존성
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+  "dependencies": {
+    "axios": "^0.25.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "styled-components": "^5.3.3",
+    "web-vitals": "^2.1.4"
+  },
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📂 파일 구조
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+     ├── public
+     └── src
+         ├── components
+         │   ├── BuyerRecommendImg
+         │   └── UploadImages
+         ├── layout
+         │   ├── Inputs
+         │   └── Section
+         ├── pages
+         ├── store
+         │   └── Contexts
+         └── utils
+             └── svg
 
-## Learn More
+> 작성 후 삭제
+> 참고 (https://www.lesstif.com/lpt/linux-tree-54952142.html)
+>
+> ```
+> $ tree -N -L 2 -d -I "node_modules"
+> ```
+>
+> 또는 vscode File-tree-generator extension 사용
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## ✨ 구현 사항
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [ ] 노출 기한 설정
+  - [ ] 제한 없음이 default
+  - [ ] 자동 미노출 상태
+- [ ] 판매 기한 설정
+  - [ ] 제한 없음이 default
+  - [ ] 자동 미노출 상태
+- [ ] 카테고리 지정
+  - [ ] 체크 박스 선택을 통해 해당 상품에 카테고리 지정 가능
+  - [ ] 체크 박스 지정 해제로 카테고리 지정 해제
+  - [ ] 선택된 카테고리 X 버튼으로 카테고리 지정 해제
+  - [ ] 최소 1개 이상의 카테고리 지정 필수
+- [ ] 필터 태그 지정
+  - [ ] 필터 태그 검색창 포커스 시 모든 필터 태그 제공
+  - [ ] 검색 결과 없는 경우 검색 결과 없음 안내
+  - [ ] 검색한 필터 태그 TAP 시 해당 필터 태그 지정
+    - [ ] 이미 지정되어 있는 태그 재선택하는 경우 기존 지정 태그 유지
+  - [ ] 지정된 태그 검색창 아래에 표시
 
-### Code Splitting
+## 🗺 한 눈으로 보는 구현 기능
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. 첫 번째 기능
 
-### Analyzing the Bundle Size
+   <img width="500" src="https://bit.ly/3HyINHE" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. 두 번째 기능
 
-### Making a Progressive Web App
+   <img width="500" src="https://bit.ly/3HyINHE" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 💡 과제 후기
 
-### Advanced Configuration
+### **우종원** 🍀
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### **박중섭** ✨
 
-### Deployment
+### **이태림** 🐯
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### **임수영** 🐧
