@@ -3,24 +3,22 @@ import MOCK_DATA from "assets/MOCK_DATA.json";
 import styled from "styled-components";
 
 const ItemSheet = () => {
+  const keys = Object.keys(MOCK_DATA[0]);
+
   return (
     <div>
       <table>
         <thead>
-          <TableHead>데이터 출처</TableHead>
-          <TableHead>출고시 파일명</TableHead>
-          <TableHead>엑셀 행 순번</TableHead>
-          <TableHead>매핑 상태</TableHead>
-          <TableHead>주문서 양식</TableHead>
+          {keys.map((key, index) => (
+            <TableHead key={{ index }}>{key}</TableHead>
+          ))}
         </thead>
         <tbody>
           {MOCK_DATA.map((data, index) => (
             <Tr key={index}>
-              <Td>{data["데이터 출처"]}</Td>
-              <Td>{data["출고시 파일명"]}</Td>
-              <Td>{data["엑셀 행 순번"]}</Td>
-              <Td>{data["매핑 상태"]}</Td>
-              <Td>{data["주문서 양식"]}</Td>
+              {Object.values(data).map((value) => (
+                <Td>{value}</Td>
+              ))}
             </Tr>
           ))}
         </tbody>
