@@ -10,7 +10,7 @@ const ItemSheet = () => {
   const tableData = useSelector((state) => state.data.tableData);
 
   const keys = Object.keys(MOCK_DATA[0]);
-  const sortedData = useSelector((state) => state.data);
+  const sortedData = useSelector((state) => state.sort);
   const [selColumn, setSelColumn] = useState(null);
 
   const isCheckedHandler = (event) => {
@@ -52,7 +52,7 @@ const ItemSheet = () => {
           </tr>
         </Thead>
         <tbody>
-          {tableData.map((data, index) => (
+          {sortedData.map((data, index) => (
             <Tr
               key={index}
               id={index}

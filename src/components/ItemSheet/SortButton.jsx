@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setDataActions } from "store";
+import { sortDataActions } from "store";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import styled from "styled-components";
 
@@ -11,10 +11,10 @@ const SortButton = ({ columnName, index, selColumn, setSelColumn }) => {
   const handleClick = (e) => {
     const targetId = e.currentTarget.id;
     if (isAscending) {
-      dispatch(setDataActions.descending(targetId));
+      dispatch(sortDataActions.descending(targetId));
       setIsAscending(!isAscending);
     } else {
-      dispatch(setDataActions.ascending(targetId));
+      dispatch(sortDataActions.ascending(targetId));
       setIsAscending(!isAscending);
     }
     setSelColumn(index);
@@ -40,6 +40,7 @@ const SortLabel = styled.label`
   }
   & > svg {
     opacity: 0;
+    color: red;
   }
   &:hover > svg {
     opacity: 1;

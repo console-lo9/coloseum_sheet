@@ -15,7 +15,7 @@ const tableSlice = createSlice({
   },
 });
 
-const setDataSlice = createSlice({
+const sortDataSlice = createSlice({
   name: "sort",
   initialState: [...MOCK_DATA],
   reducers: {
@@ -29,10 +29,10 @@ const setDataSlice = createSlice({
 });
 
 const store = configureStore({
-  reducer: { data: tableSlice.reducer, sort: setDataSlice.reducer },
+  reducer: { data: tableSlice.reducer, sort: sortDataSlice.reducer },
 });
 
 export const tableActions = tableSlice.actions;
-export const setDataActions = setDataSlice.actions;
+export const sortDataActions = sortDataSlice.actions;
 
 export default store;
