@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MOCK_DATA from "assets/MOCK_DATA.json";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
+import SortButton from "./SortButton";
 
 const ItemSheet = () => {
   const [clickedId, setClickedId] = useState();
