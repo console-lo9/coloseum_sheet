@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MOCK_DATA from "assets/MOCK_DATA.json";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
+import SortButton from "./SortButton";
 
 const ItemSheet = () => {
   const [clickedId, setClickedId] = useState();
@@ -9,6 +10,8 @@ const ItemSheet = () => {
   const tableData = useSelector((state) => state.data.tableData);
 
   const keys = Object.keys(MOCK_DATA[0]);
+  const sortedData = useSelector((state) => state.sort);
+  const [selColumn, setSelColumn] = useState(null);
 
   const isCheckedHandler = (event) => {
     const isChecked = event.target.checked;
@@ -34,6 +37,12 @@ const ItemSheet = () => {
               <Th key={index}>
                 <div>
                   <span>{key}</span>
+                  <SortButton
+                    columnName={key}
+                    index={index}
+                    selColumn={selColumn}
+                    setSelColumn={setSelColumn}
+                  />
                   <span>
                     <input type="checkbox" onChange={isCheckedHandler} />
                   </span>
@@ -43,7 +52,7 @@ const ItemSheet = () => {
           </tr>
         </Thead>
         <tbody>
-          {tableData.map((data, index) => (
+          {sortedData.map((data, index) => (
             <Tr
               key={index}
               id={index}
