@@ -15,13 +15,13 @@ const ItemSheet = () => {
         </thead>
         <tbody>
           {MOCK_DATA.map((data, index) => (
-            <tr key={index}>
-              <td>{data["데이터 출처"]}</td>
-              <td>{data["출고시 파일명"]}</td>
-              <td>{data["엑셀 행 순번"]}</td>
-              <td>{data["매핑 상태"]}</td>
-              <td>{data["주문서 양식"]}</td>
-            </tr>
+            <Tr key={index}>
+              <Td>{data["데이터 출처"]}</Td>
+              <Td>{data["출고시 파일명"]}</Td>
+              <Td>{data["엑셀 행 순번"]}</Td>
+              <Td>{data["매핑 상태"]}</Td>
+              <Td>{data["주문서 양식"]}</Td>
+            </Tr>
           ))}
         </tbody>
       </table>
@@ -32,4 +32,15 @@ const ItemSheet = () => {
 const TableHead = styled.th`
   padding-right: 10px;
 `;
+
+const Tr = styled.tr`
+  padding: 100px;
+`;
+
+const Td = styled.td`
+  padding-right: 20px;
+  text-align: center;
+  outline: solid black;
+`;
+
 export default ItemSheet;
