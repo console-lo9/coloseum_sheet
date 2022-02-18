@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { sortDataActions } from "store";
+import { sortDataActions } from "store/sortDataSlice";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import styled from "styled-components";
 
