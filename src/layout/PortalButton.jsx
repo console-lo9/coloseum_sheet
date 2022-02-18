@@ -3,13 +3,22 @@ import styled from "styled-components";
 import { CgChevronDoubleUpO, CgChevronDoubleDownO } from "react-icons/cg";
 import { useSelector } from "react-redux";
 
-const PortalButton = ({ handleClick }) => {
+const PortalButton = ({ handleClick, cardView }) => {
+  console.log(cardView);
   return (
     <>
-      <UpBtnBox onClick={handleClick} id="upBtn">
+      <UpBtnBox
+        onClick={handleClick}
+        id="upBtn"
+        className={cardView ? cardView : ""}
+      >
         <CgChevronDoubleUpO />
       </UpBtnBox>
-      <DownBtnBox onClick={handleClick} id="downBtn">
+      <DownBtnBox
+        onClick={handleClick}
+        id="downBtn"
+        className={cardView ? cardView : ""}
+      >
         <CgChevronDoubleDownO />
       </DownBtnBox>
     </>
@@ -29,6 +38,10 @@ const UpBtnBox = styled.div`
   @media screen and (max-width: 1024px) {
     left: 90%;
   }
+  &.cardView {
+    top: 150px;
+    left: 90%;
+  }
 `;
 const DownBtnBox = styled.div`
   position: sticky;
@@ -41,6 +54,10 @@ const DownBtnBox = styled.div`
   top: 160px;
   left: 88%;
   @media screen and (max-width: 1024px) {
+    left: 90%;
+  }
+  &.cardView {
+    top: 250px;
     left: 90%;
   }
 `;
