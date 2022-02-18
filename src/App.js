@@ -1,4 +1,5 @@
-import ItemSheet from "components/ItemSheet/ItemSheet";
+import ItemSheet from "components/ItemSheet";
+import Cards from "components/Cards";
 import GlobalStyle from "./style/GlobalStyle";
 import MainPage from "layout/MainPage";
 import { useEffect } from "react";
@@ -16,6 +17,7 @@ const App = () => {
     <MainPage>
       <GlobalStyle />
       <ItemSheet />
+      {/* <Cards /> */}
     </MainPage>
   );
 };

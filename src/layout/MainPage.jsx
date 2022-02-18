@@ -7,9 +7,9 @@ const MainPage = (props) => {
 
 const MainWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 50px;
-  height: 100vh;
 `;
 
 export default MainPage;

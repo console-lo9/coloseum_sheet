@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import MOCK_DATA from "assets/MOCK_DATA.json";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import SortButton from "./SortButton";
+import { useEffect } from "react";
+import { currentRowActions } from "store";
 
 const ItemSheet = () => {
+  const dispatch = useDispatch();
+
   const [clickedId, setClickedId] = useState();
   const [clickedRowId, setClickedRowId] = useState();
   const tableData = useSelector((state) => state.data.tableData);
@@ -12,6 +16,7 @@ const ItemSheet = () => {
   const keys = Object.keys(MOCK_DATA[0]);
   const sortedData = useSelector((state) => state.sort);
   const [selColumn, setSelColumn] = useState(null);
+  const outsideRef = useRef();
 
   const isCheckedHandler = (event) => {
     const isChecked = event.target.checked;
@@ -28,8 +33,21 @@ const ItemSheet = () => {
     setClickedRowId(clickedTrId);
   };
 
+  useEffect(() => {
+    const clickOutsideHandler = (event) => {
+      if (outsideRef.current && !outsideRef.current.contains(event.target)) {
+        dispatch(currentRowActions.setCurrentRow(-1));
+      }
+    };
+    document.addEventListener("click", clickOutsideHandler);
+    dispatch(currentRowActions.setCurrentRow(clickedRowId));
+    return () => {
+      document.removeEventListener("click", clickOutsideHandler);
+    };
+  }, [clickedRowId, outsideRef]);
+
   return (
-    <TableWrapper>
+    <TableWrapper ref={outsideRef}>
       <Table>
         <Thead>
           <tr>
