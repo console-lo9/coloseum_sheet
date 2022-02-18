@@ -24,6 +24,7 @@ const CardContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 15px;
 `;
 
 export default Table;
