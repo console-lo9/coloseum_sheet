@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MOCK_DATA from "assets/MOCK_DATA.json";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
@@ -8,14 +8,16 @@ const ItemSheet = () => {
   const [clickedId, setClickedId] = useState();
   const [clickedRowId, setClickedRowId] = useState();
   const tableData = useSelector((state) => state.data.tableData);
+  const sortedData = useSelector((state) => state.sort);
 
   const keys = Object.keys(MOCK_DATA[0]);
-  const sortedData = useSelector((state) => state.sort);
+  const [rows, setRows] = useState(keys);
   const [selColumn, setSelColumn] = useState(null);
+  const [selected, setSelected] = useState([]);
 
   const isCheckedHandler = (event) => {
-    const isChecked = event.target.checked;
-    console.log(isChecked);
+    const currentValue = event.target.value;
+    selectedHandler(currentValue);
   };
 
   const setHighLightHandler = (event) => {
@@ -28,12 +30,24 @@ const ItemSheet = () => {
     setClickedRowId(clickedTrId);
   };
 
+  const selectedHandler = (value) => {
+    if (selected.includes(value)) {
+      setSelected(selected.filter((item) => item !== value));
+    } else {
+      setSelected([...selected, value]);
+    }
+  };
+
+  useEffect(() => {
+    setRows(Array.from(new Set([...selected, ...rows])));
+  }, [selected]);
+
   return (
     <TableWrapper>
       <Table>
         <Thead>
           <tr>
-            {keys.map((key, index) => (
+            {rows.map((key, index) => (
               <Th key={index}>
                 <div>
                   <span>{key}</span>
@@ -44,7 +58,12 @@ const ItemSheet = () => {
                     setSelColumn={setSelColumn}
                   />
                   <span>
-                    <input type="checkbox" onChange={isCheckedHandler} />
+                    <input
+                      type="checkbox"
+                      value={key}
+                      onChange={isCheckedHandler}
+                      checked={selected.includes(key)}
+                    />
                   </span>
                 </div>
               </Th>
@@ -66,7 +85,7 @@ const ItemSheet = () => {
                   onClick={setHighLightHandler}
                   clickedId={clickedId}
                 >
-                  {value}
+                  {data[rows[index]]}
                 </Td>
               ))}
             </Tr>
