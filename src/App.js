@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { tableActions } from "./store";
 import MOCK_DATA from "assets/MOCK_DATA.json";
+import ItemsPage from "components/ItemSheet";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,8 @@ const App = () => {
   return (
     <MainPage>
       <GlobalStyle />
-      <Cards />
+      {/* <Cards /> */}
+      <ItemsPage />
     </MainPage>
   );
 };

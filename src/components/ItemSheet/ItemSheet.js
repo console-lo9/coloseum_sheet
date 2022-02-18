@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import MOCK_DATA from "assets/MOCK_DATA.json";
-import styled from "styled-components";
 import { useSelector } from "react-redux";
 import SortButton from "./SortButton";
+import * as S from "./styles";
 
 const ItemSheet = () => {
   const [clickedId, setClickedId] = useState();
@@ -29,99 +29,56 @@ const ItemSheet = () => {
   };
 
   return (
-    <TableWrapper>
-      <Table>
-        <Thead>
-          <tr>
-            {keys.map((key, index) => (
-              <Th key={index}>
-                <div>
-                  <span>{key}</span>
-                  <SortButton
-                    columnName={key}
-                    index={index}
-                    selColumn={selColumn}
-                    setSelColumn={setSelColumn}
-                  />
-                  <span>
-                    <input type="checkbox" onChange={isCheckedHandler} />
-                  </span>
-                </div>
-              </Th>
-            ))}
-          </tr>
-        </Thead>
-        <tbody>
-          {sortedData.map((data, index) => (
-            <Tr
-              key={index}
-              id={index}
-              onClick={setRowHighLightHandler}
-              clickedId={clickedRowId}
-            >
-              {Object.values(data).map((value, index) => (
-                <Td
-                  key={index}
-                  id={index}
-                  onClick={setHighLightHandler}
-                  clickedId={clickedId}
-                >
-                  {value}
-                </Td>
+    <>
+      <S.TableWrapper>
+        <span>총 계: {tableData.length} 건</span>
+        <h1>출고 요청시 매핑 리스트</h1>
+        <S.Table>
+          <S.Thead>
+            <tr>
+              {keys.map((key, index) => (
+                <S.Th key={index}>
+                  <div>
+                    <span>{key}</span>
+                    <SortButton
+                      columnName={key}
+                      index={index}
+                      selColumn={selColumn}
+                      setSelColumn={setSelColumn}
+                    />
+                    <span>
+                      <input type="checkbox" onChange={isCheckedHandler} />
+                    </span>
+                  </div>
+                </S.Th>
               ))}
-            </Tr>
-          ))}
-        </tbody>
-      </Table>
-    </TableWrapper>
+            </tr>
+          </S.Thead>
+          <tbody>
+            {sortedData.map((data, index) => (
+              <S.Tr
+                key={index}
+                id={index}
+                onClick={setRowHighLightHandler}
+                clickedId={clickedRowId}
+              >
+                {Object.values(data).map((value, index) => (
+                  <S.Td
+                    key={index}
+                    id={index}
+                    onClick={setHighLightHandler}
+                    clickedId={clickedId}
+                  >
+                    {value}
+                  </S.Td>
+                ))}
+              </S.Tr>
+            ))}
+          </tbody>
+        </S.Table>
+      </S.TableWrapper>
+    </>
   );
 };
-
-const TableWrapper = styled.div`
-  overflow: auto;
-  height: 90vh;
-`;
-
-const Table = styled.table`
-  overflow: auto;
-`;
-
-const Thead = styled.thead`
-  position: sticky;
-  top: 1px;
-  background-color: #fff;
-`;
-
-const Th = styled.th`
-  position: sticky;
-  padding: 10px;
-  outline: 1px solid black;
-  text-align: center;
-  white-space: nowrap;
-
-  div {
-    display: flex;
-  }
-
-  span {
-    display: flex;
-    align-items: center;
-    margin-right: 5px;
-  }
-`;
-
-const Tr = styled.tr`
-  padding: 100px;
-  background-color: ${(props) => props.clickedId === props.id && "#D3DEDC"};
-`;
-
-const Td = styled.td`
-  padding: 15px;
-  text-align: center;
-  outline: 1px solid black;
-  white-space: nowrap;
-
-  background-color: ${(props) => props.clickedId === props.id && "#D3DEDC"};
-`;
 
 export default ItemSheet;
