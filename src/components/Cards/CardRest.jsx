@@ -1,23 +1,24 @@
 import styled from "styled-components";
 import * as S from "./styles";
+import * as Constants from "constants";
 const CardRest = ({ change, id, isLack, mappingState }) => {
   return (
     <S.RowDiv>
       <S.ItemDiv>
-        <S.ItemTitle>수량변경</S.ItemTitle>
+        <S.ItemTitle>{Constants.QUANTITY_CHANGE}</S.ItemTitle>
         <S.ItemContent>{change}</S.ItemContent>
       </S.ItemDiv>
       <S.ItemDiv>
-        <S.ItemTitle>연동상품ID</S.ItemTitle>
+        <S.ItemTitle>{Constants.LINKED_PRODUCT_ID}</S.ItemTitle>
         <S.ItemContent>{id}</S.ItemContent>
       </S.ItemDiv>
       <S.ItemDiv>
-        <S.ItemTitle>재고부족여부</S.ItemTitle>
-        <S.Button>{isLack}</S.Button>
+        <S.ItemTitle>{Constants.INVENTORY_LACK}</S.ItemTitle>
+        <S.Button content={isLack}>{isLack}</S.Button>
       </S.ItemDiv>
       <ButtonDiv>
-        <S.ItemTitle>매핑상태</S.ItemTitle>
-        <S.Button>{mappingState}</S.Button>
+        <S.ItemTitle>{Constants.MAPPING_STATE}</S.ItemTitle>
+        <S.Button content={mappingState}>{mappingState}</S.Button>
       </ButtonDiv>
     </S.RowDiv>
   );
