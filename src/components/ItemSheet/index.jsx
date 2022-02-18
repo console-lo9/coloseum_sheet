@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import ItemSheet from "./ItemSheet";
 import React, { Fragment } from "react";
 import Card from "components/Cards/Card";
-import * as S from "components/Cards/styles";
 import styled from "styled-components";
 
 const Table = () => {
@@ -19,6 +18,7 @@ const Table = () => {
     </Fragment>
   );
 };
+
 const CardContainer = styled.div`
   display: flex;
   flex-direction: row;

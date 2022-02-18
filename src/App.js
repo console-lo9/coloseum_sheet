@@ -1,11 +1,10 @@
-import ItemSheet from "components/ItemSheet";
-import Cards from "components/Cards";
-import GlobalStyle from "./style/GlobalStyle";
+import GlobalStyle from "style/GlobalStyle";
 import MainPage from "layout/MainPage";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { tableActions } from "store";
 import MOCK_DATA from "assets/MOCK_DATA.json";
+import SelectView from "components/SelectView";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -16,8 +15,7 @@ const App = () => {
   return (
     <MainPage>
       <GlobalStyle />
-      <ItemSheet />
-      <Cards />
+      <SelectView />
     </MainPage>
   );
 };
