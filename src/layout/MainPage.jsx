@@ -9,6 +9,7 @@ const MainWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding: 50px;
+  height: 100vh;
 `;
 
 export default MainPage;
