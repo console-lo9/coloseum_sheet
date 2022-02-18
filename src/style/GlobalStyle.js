@@ -4,8 +4,8 @@ const GlobalStyle = createGlobalStyle`
 /* Reset CSS */
 * {
   box-sizing: border-box;
-   margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   font-family: 'Noto Sans KR', sans-serif;
 }
 a {
