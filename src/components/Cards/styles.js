@@ -94,8 +94,8 @@ export const Button = styled.button`
         `;
       case "주문명세트지정":
         return css`
-          border: 1px solid ${Constants.GRAY1}
-          color: ${Constants.GRAY1}
+          border: 1px solid ${Constants.GRAY1};
+          color: ${Constants.GRAY1};
         `;
       default:
         return css`
