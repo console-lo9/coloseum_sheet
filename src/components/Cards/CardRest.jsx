@@ -13,11 +13,11 @@ const CardRest = ({ change, id, isLack, mappingState }) => {
       </S.ItemDiv>
       <S.ItemDiv>
         <S.ItemTitle>재고부족여부</S.ItemTitle>
-        <S.Button>{isLack}</S.Button>
+        <S.Button content={isLack}>{isLack}</S.Button>
       </S.ItemDiv>
       <ButtonDiv>
         <S.ItemTitle>매핑상태</S.ItemTitle>
-        <S.Button>{mappingState}</S.Button>
+        <S.Button content={mappingState}>{mappingState}</S.Button>
       </ButtonDiv>
     </S.RowDiv>
   );

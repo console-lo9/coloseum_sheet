@@ -6,7 +6,6 @@ import CardRest from "./CardRest";
 import CardTitle from "./CardTitle";
 
 const Card = ({ data }) => {
-  console.log(data);
   if (!data) return <div>로딩중</div>;
   return (
     <S.CardContainer>
