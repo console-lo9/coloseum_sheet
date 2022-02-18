@@ -79,15 +79,21 @@ const ItemSheet = () => {
 
 const TableWrapper = styled.div`
   overflow: auto;
+  height: 90vh;
 `;
 
 const Table = styled.table`
   overflow: auto;
 `;
 
-const Thead = styled.thead``;
+const Thead = styled.thead`
+  position: sticky;
+  top: 1px;
+  background-color: #fff;
+`;
 
 const Th = styled.th`
+  position: sticky;
   padding: 10px;
   outline: 1px solid black;
   text-align: center;
