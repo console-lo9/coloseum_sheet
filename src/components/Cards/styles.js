@@ -7,6 +7,7 @@ export const CardContainer = styled.div`
   border-radius: 5px;
   padding: 15px 0px 0px 0px;
   margin: 5px;
+  font-size: 10px;
 `;
 export const TitleContainer = styled.div`
   display: flex;
@@ -51,10 +52,10 @@ export const RowDiv = styled.div`
   }
 `;
 export const ItemDiv = styled.div`
-  margin-right: 20px;
+  margin-right: 10px;
   width: 90px;
   @media ${Constants.mobile} {
-    margin-right: 15px;
+    margin-right: 5px;
     width: 77px;
   }
 `;
