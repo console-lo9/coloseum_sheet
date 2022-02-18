@@ -3,8 +3,10 @@ import MOCK_DATA from "assets/MOCK_DATA.json";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import SortButton from "./SortButton";
-import * as Constants from "constants";
 import { setCurrentRow } from "store/currentRowSlice";
+import PortalButton from "layout/PortalButton";
+import * as Constants from "constants";
+
 const ItemSheet = () => {
   const dispatch = useDispatch();
 
@@ -19,9 +21,13 @@ const ItemSheet = () => {
   const [selected, setSelected] = useState([]);
   const outsideRef = useRef();
 
+  const tableRef = useRef();
+  const [tableHeight, setTableHeight] = useState();
+
   const clickHandler = () => {
     dispatch(setCurrentRow(clickedRowId));
   };
+
   const isCheckedHandler = (event) => {
     const currentValue = event.target.value;
     selectedHandler(currentValue);
@@ -53,14 +59,25 @@ const ItemSheet = () => {
     };
     document.addEventListener("click", clickOutsideHandler);
     setRows(Array.from(new Set([...selected, ...rows])));
+    setTableHeight(tableRef.current.getBoundingClientRect().height);
 
     return () => {
       document.removeEventListener("click", clickOutsideHandler);
     };
   }, [clickedRowId, outsideRef, selected]);
 
+  const handleClick = (e) => {
+    console.log(e.currentTarget.id);
+    if (e.currentTarget.id === "upBtn") {
+      outsideRef.current.scrollTop -= tableHeight * 0.2;
+    } else if (e.currentTarget.id === "downBtn") {
+      outsideRef.current.scrollTop += tableHeight * 0.2;
+    }
+  };
+
   return (
     <TableWrapper ref={outsideRef}>
+      <PortalButton handleClick={handleClick} />
       <Table>
         <Thead>
           <tr>
@@ -87,7 +104,7 @@ const ItemSheet = () => {
             ))}
           </tr>
         </Thead>
-        <tbody>
+        <tbody ref={tableRef}>
           {sortedData.map((data, index) => (
             <Tr
               key={index}
@@ -117,6 +134,12 @@ const ItemSheet = () => {
 const TableWrapper = styled.div`
   overflow: auto;
   height: 90vh;
+  position: relative;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 `;
 
 const Table = styled.table`
