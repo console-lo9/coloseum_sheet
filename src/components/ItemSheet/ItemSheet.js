@@ -1,9 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import MOCK_DATA from "assets/MOCK_DATA.json";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import SortButton from "./SortButton";
-import { useEffect } from "react";
 import { currentRowActions } from "store";
 import PortalButton from "layout/PortalButton";
 
@@ -13,18 +12,20 @@ const ItemSheet = () => {
   const [clickedId, setClickedId] = useState();
   const [clickedRowId, setClickedRowId] = useState();
   const tableData = useSelector((state) => state.data.tableData);
+  const sortedData = useSelector((state) => state.sort);
 
   const keys = Object.keys(MOCK_DATA[0]);
-  const sortedData = useSelector((state) => state.sort);
+  const [rows, setRows] = useState(keys);
   const [selColumn, setSelColumn] = useState(null);
+  const [selected, setSelected] = useState([]);
   const outsideRef = useRef();
 
   const tableRef = useRef();
   const [tableHeight, setTableHeight] = useState();
 
   const isCheckedHandler = (event) => {
-    const isChecked = event.target.checked;
-    console.log(isChecked);
+    const currentValue = event.target.value;
+    selectedHandler(currentValue);
   };
 
   const setHighLightHandler = (event) => {
@@ -37,6 +38,14 @@ const ItemSheet = () => {
     setClickedRowId(clickedTrId);
   };
 
+  const selectedHandler = (value) => {
+    if (selected.includes(value)) {
+      setSelected(selected.filter((item) => item !== value));
+    } else {
+      setSelected([...selected, value]);
+    }
+  };
+
   useEffect(() => {
     const clickOutsideHandler = (event) => {
       if (outsideRef.current && !outsideRef.current.contains(event.target)) {
@@ -45,11 +54,13 @@ const ItemSheet = () => {
     };
     document.addEventListener("click", clickOutsideHandler);
     dispatch(currentRowActions.setCurrentRow(clickedRowId));
+    setRows(Array.from(new Set([...selected, ...rows])));
     setTableHeight(tableRef.current.getBoundingClientRect().height);
+
     return () => {
       document.removeEventListener("click", clickOutsideHandler);
     };
-  }, [clickedRowId, outsideRef, tableRef]);
+  }, [clickedRowId, outsideRef, selected]);
 
   const handleClick = (e) => {
     console.log(e.currentTarget.id);
@@ -66,7 +77,7 @@ const ItemSheet = () => {
       <Table>
         <Thead>
           <tr>
-            {keys.map((key, index) => (
+            {rows.map((key, index) => (
               <Th key={index}>
                 <div>
                   <span>{key}</span>
@@ -77,7 +88,12 @@ const ItemSheet = () => {
                     setSelColumn={setSelColumn}
                   />
                   <span>
-                    <input type="checkbox" onChange={isCheckedHandler} />
+                    <input
+                      type="checkbox"
+                      value={key}
+                      onChange={isCheckedHandler}
+                      checked={selected.includes(key)}
+                    />
                   </span>
                 </div>
               </Th>
@@ -99,7 +115,7 @@ const ItemSheet = () => {
                   onClick={setHighLightHandler}
                   clickedId={clickedId}
                 >
-                  {value}
+                  {data[rows[index]]}
                 </Td>
               ))}
             </Tr>
