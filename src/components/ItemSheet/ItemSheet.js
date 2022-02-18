@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import MOCK_DATA from "assets/MOCK_DATA.json";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import SortButton from "./SortButton";
+import { useEffect } from "react";
+import { currentRowActions } from "store";
 
 const ItemSheet = () => {
+  const dispatch = useDispatch();
+
   const [clickedId, setClickedId] = useState();
   const [clickedRowId, setClickedRowId] = useState();
   const tableData = useSelector((state) => state.data.tableData);
@@ -27,6 +31,10 @@ const ItemSheet = () => {
     const clickedTrId = Number(event.target.parentElement.id);
     setClickedRowId(clickedTrId);
   };
+
+  useEffect(() => {
+    dispatch(currentRowActions.setCurrentRow(clickedRowId));
+  }, [clickedRowId]);
 
   return (
     <TableWrapper>
