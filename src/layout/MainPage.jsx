@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const MainPage = (props) => {
-  return <MainWrapper>{props.children}</MainWrapper>;
+  return <MainWrapper className="asd">{props.children}</MainWrapper>;
 };
 
 const MainWrapper = styled.div`

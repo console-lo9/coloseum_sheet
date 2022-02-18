@@ -17,7 +17,7 @@ const App = () => {
     <MainPage>
       <GlobalStyle />
       <ItemSheet />
-      {/* <Cards /> */}
+      <Cards />
     </MainPage>
   );
 };

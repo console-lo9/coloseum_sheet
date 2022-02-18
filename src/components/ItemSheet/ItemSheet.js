@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import SortButton from "./SortButton";
 import { useEffect } from "react";
 import { currentRowActions } from "store";
+import PortalButton from "layout/PortalButton";
 
 const ItemSheet = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,9 @@ const ItemSheet = () => {
   const sortedData = useSelector((state) => state.sort);
   const [selColumn, setSelColumn] = useState(null);
   const outsideRef = useRef();
+
+  const tableRef = useRef();
+  const [tableHeight, setTableHeight] = useState();
 
   const isCheckedHandler = (event) => {
     const isChecked = event.target.checked;
@@ -41,13 +45,24 @@ const ItemSheet = () => {
     };
     document.addEventListener("click", clickOutsideHandler);
     dispatch(currentRowActions.setCurrentRow(clickedRowId));
+    setTableHeight(tableRef.current.getBoundingClientRect().height);
     return () => {
       document.removeEventListener("click", clickOutsideHandler);
     };
-  }, [clickedRowId, outsideRef]);
+  }, [clickedRowId, outsideRef, tableRef]);
+
+  const handleClick = (e) => {
+    console.log(e.currentTarget.id);
+    if (e.currentTarget.id === "upBtn") {
+      outsideRef.current.scrollTop -= tableHeight * 0.2;
+    } else if (e.currentTarget.id === "downBtn") {
+      outsideRef.current.scrollTop += tableHeight * 0.2;
+    }
+  };
 
   return (
     <TableWrapper ref={outsideRef}>
+      <PortalButton handleClick={handleClick} />
       <Table>
         <Thead>
           <tr>
@@ -69,7 +84,7 @@ const ItemSheet = () => {
             ))}
           </tr>
         </Thead>
-        <tbody>
+        <tbody ref={tableRef}>
           {sortedData.map((data, index) => (
             <Tr
               key={index}
@@ -98,6 +113,7 @@ const ItemSheet = () => {
 const TableWrapper = styled.div`
   overflow: auto;
   height: 90vh;
+  position: relative;
 `;
 
 const Table = styled.table`
