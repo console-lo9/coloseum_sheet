@@ -1,9 +1,9 @@
-import ItemSheet from "components/ItemSheet/ItemSheet";
+import Cards from "components/Cards";
 import GlobalStyle from "./style/GlobalStyle";
 import MainPage from "layout/MainPage";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { tableActions } from "store";
+import { tableActions } from "./store";
 import MOCK_DATA from "assets/MOCK_DATA.json";
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
   return (
     <MainPage>
       <GlobalStyle />
-      <ItemSheet />
+      <Cards />
     </MainPage>
   );
 };
