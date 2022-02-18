@@ -3,8 +3,8 @@ import MOCK_DATA from "assets/MOCK_DATA.json";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import SortButton from "./SortButton";
-import { currentRowActions } from "store";
-
+import * as Constants from "constants";
+import { setCurrentRow } from "store/currentRowSlice";
 const ItemSheet = () => {
   const dispatch = useDispatch();
 
@@ -19,6 +19,9 @@ const ItemSheet = () => {
   const [selected, setSelected] = useState([]);
   const outsideRef = useRef();
 
+  const clickHandler = () => {
+    dispatch(setCurrentRow(clickedRowId));
+  };
   const isCheckedHandler = (event) => {
     const currentValue = event.target.value;
     selectedHandler(currentValue);
@@ -45,11 +48,10 @@ const ItemSheet = () => {
   useEffect(() => {
     const clickOutsideHandler = (event) => {
       if (outsideRef.current && !outsideRef.current.contains(event.target)) {
-        dispatch(currentRowActions.setCurrentRow(-1));
+        dispatch(setCurrentRow(-1));
       }
     };
     document.addEventListener("click", clickOutsideHandler);
-    dispatch(currentRowActions.setCurrentRow(clickedRowId));
     setRows(Array.from(new Set([...selected, ...rows])));
 
     return () => {
@@ -90,15 +92,16 @@ const ItemSheet = () => {
             <Tr
               key={index}
               id={index}
-              onClick={setRowHighLightHandler}
+              onMouseOver={setRowHighLightHandler}
               clickedId={clickedRowId}
             >
               {Object.values(data).map((value, index) => (
                 <Td
                   key={index}
                   id={index}
-                  onClick={setHighLightHandler}
+                  onMouseOver={setHighLightHandler}
                   clickedId={clickedId}
+                  onClick={clickHandler}
                 >
                   {data[rows[index]]}
                 </Td>
@@ -118,20 +121,24 @@ const TableWrapper = styled.div`
 
 const Table = styled.table`
   overflow: auto;
+  border: 1px solid ${Constants.GRAY4};
+  border-collapse: collapse;
 `;
 
 const Thead = styled.thead`
   position: sticky;
-  top: 1px;
-  background-color: #fff;
+  top: 0;
+  background-color: ${Constants.GRAY3};
+  color: ${Constants.BLACK};
+  font-size: 14px;
 `;
 
 const Th = styled.th`
   position: sticky;
   padding: 10px;
-  outline: 1px solid black;
   text-align: center;
   white-space: nowrap;
+  border: 1px solid ${Constants.GRAY4};
 
   div {
     display: flex;
@@ -146,16 +153,18 @@ const Th = styled.th`
 
 const Tr = styled.tr`
   padding: 100px;
-  background-color: ${(props) => props.clickedId === props.id && "#D3DEDC"};
+  background-color: ${(props) =>
+    props.clickedId === props.id && `${Constants.LIGHTBLUE}`};
 `;
 
 const Td = styled.td`
   padding: 15px;
   text-align: center;
-  outline: 1px solid black;
   white-space: nowrap;
+  border: 1px solid ${Constants.GRAY4};
 
-  background-color: ${(props) => props.clickedId === props.id && "#D3DEDC"};
+  background-color: ${(props) =>
+    props.clickedId === props.id && `${Constants.LIGHTBLUE}`};
 `;
 
 export default ItemSheet;
