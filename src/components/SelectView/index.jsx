@@ -4,6 +4,7 @@ import ItemSheet from "components/ItemSheet";
 import { AiOutlineTable } from "react-icons/ai";
 import { BiCard } from "react-icons/bi";
 import styled from "styled-components";
+import * as Constants from "constants";
 
 const TABLE = "table";
 const CARD = "card";
@@ -41,11 +42,14 @@ const ButtonDiv = styled.button`
   border-radius: 5px;
   padding: 1px 3px;
   margin-left: 3px;
-
+  &:nth-child(1),
+  &:nth-child(2) {
+    color: ${Constants.GRAY2};
+  }
   &:hover {
     &:nth-child(1),
     &:nth-child(2) {
-      color: #186af8;
+      color: ${Constants.BLUE};
     }
   }
   svg {
