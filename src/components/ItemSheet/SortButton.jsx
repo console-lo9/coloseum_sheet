@@ -31,7 +31,6 @@ const SortButton = ({ columnName, index, selColumn, setSelColumn }) => {
     </>
   );
 };
-
 const SortLabel = styled.label`
   &.active {
     & > svg {
