@@ -3,8 +3,6 @@ import Card from "./Card.jsx";
 import styled from "styled-components";
 import PortalButton from "layout/PortalButton.jsx";
 import { useRef } from "react";
-import { useEffect } from "react";
-import { useState } from "react";
 
 const CardList = () => {
   const cardConRef = useRef();
@@ -40,5 +38,6 @@ const CardContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  overflow: auto;
 `;
 export default CardList;

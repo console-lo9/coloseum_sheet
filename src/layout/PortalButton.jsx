@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { CgChevronDoubleUpO, CgChevronDoubleDownO } from "react-icons/cg";
-import { useSelector } from "react-redux";
 
 const PortalButton = ({ handleClick, cardView }) => {
   console.log(cardView);

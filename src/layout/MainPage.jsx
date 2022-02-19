@@ -10,6 +10,7 @@ const MainWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 50px;
+  height: 100vh;
 `;
 
 export default MainPage;

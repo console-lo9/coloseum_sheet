@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import MOCK_DATA from "assets/MOCK_DATA.json";
-import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import SortButton from "./SortButton";
 import { setCurrentRow } from "store/currentRowSlice";
 import PortalButton from "layout/PortalButton";
-import * as Constants from "constants";
+import * as S from "./styles";
 
 const ItemSheet = () => {
   const dispatch = useDispatch();
@@ -76,13 +75,13 @@ const ItemSheet = () => {
   };
 
   return (
-    <TableWrapper ref={outsideRef}>
+    <S.TableWrapper ref={outsideRef}>
       <PortalButton handleClick={handleClick} />
-      <Table>
-        <Thead>
+      <S.Table>
+        <S.Thead>
           <tr>
             {rows.map((key, index) => (
-              <Th key={index}>
+              <S.Th key={index}>
                 <div>
                   <span>{key}</span>
                   <SortButton
@@ -100,20 +99,20 @@ const ItemSheet = () => {
                     />
                   </span>
                 </div>
-              </Th>
+              </S.Th>
             ))}
           </tr>
-        </Thead>
+        </S.Thead>
         <tbody ref={tableRef}>
           {sortedData.map((data, index) => (
-            <Tr
+            <S.Tr
               key={index}
               id={index}
               onMouseOver={setRowHighLightHandler}
               clickedId={clickedRowId}
             >
               {Object.values(data).map((value, index) => (
-                <Td
+                <S.Td
                   key={index}
                   id={index}
                   onMouseOver={setHighLightHandler}
@@ -121,73 +120,14 @@ const ItemSheet = () => {
                   onClick={clickHandler}
                 >
                   {data[rows[index]]}
-                </Td>
+                </S.Td>
               ))}
-            </Tr>
+            </S.Tr>
           ))}
         </tbody>
-      </Table>
-    </TableWrapper>
+      </S.Table>
+    </S.TableWrapper>
   );
 };
-
-const TableWrapper = styled.div`
-  overflow: auto;
-  height: 90vh;
-  position: relative;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-`;
-
-const Table = styled.table`
-  overflow: auto;
-  border: 1px solid ${Constants.GRAY4};
-  border-collapse: collapse;
-`;
-
-const Thead = styled.thead`
-  position: sticky;
-  top: 0;
-  background-color: ${Constants.GRAY3};
-  color: ${Constants.BLACK};
-  font-size: 14px;
-`;
-
-const Th = styled.th`
-  position: sticky;
-  padding: 10px;
-  text-align: center;
-  white-space: nowrap;
-  border: 1px solid ${Constants.GRAY4};
-
-  div {
-    display: flex;
-  }
-
-  span {
-    display: flex;
-    align-items: center;
-    margin-right: 5px;
-  }
-`;
-
-const Tr = styled.tr`
-  padding: 100px;
-  background-color: ${(props) =>
-    props.clickedId === props.id && `${Constants.LIGHTBLUE}`};
-`;
-
-const Td = styled.td`
-  padding: 15px;
-  text-align: center;
-  white-space: nowrap;
-  border: 1px solid ${Constants.GRAY4};
-
-  background-color: ${(props) =>
-    props.clickedId === props.id && `${Constants.LIGHTBLUE}`};
-`;
 
 export default ItemSheet;
