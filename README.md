@@ -78,6 +78,11 @@
 
     <img width="800" src="https://user-images.githubusercontent.com/43867711/154756516-6ccee25c-9f27-4863-9c2e-3c65314095c1.gif"/>
 
+6. 테이블 클릭 시 상단에 카드 노출<br/>
+   클릭 시 테이블을 카드 형태로 볼 수 있고, 테이블이 아닌 공간을 클릭할 경우 카드가 사라집니다.
+
+    <img width="800" src="https://user-images.githubusercontent.com/43867711/154790924-67d8bd7d-4f98-4d5c-b82b-a4a9e806ea51.gif"/>
+
 #### **카드 뷰**
 
 1.  카드 뷰로 전환<br/>
