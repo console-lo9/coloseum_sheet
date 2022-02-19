@@ -23,6 +23,7 @@ const ItemSheet = () => {
   const tableRef = useRef();
   const [tableHeight, setTableHeight] = useState();
 
+
   const clickHandler = () => {
     dispatch(setCurrentRow(clickedRowId));
   };
