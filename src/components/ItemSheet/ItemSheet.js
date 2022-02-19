@@ -5,6 +5,8 @@ import SortButton from "./SortButton";
 import { setCurrentRow } from "store/currentRowSlice";
 import PortalButton from "layout/PortalButton";
 import * as S from "./styles";
+import { ButtonContainer } from "components/SelectView";
+import Button from "layout/Button";
 
 const ItemSheet = () => {
   const dispatch = useDispatch();
@@ -73,8 +75,17 @@ const ItemSheet = () => {
     }
   };
 
+  const resetHandler = () => {
+    setSelected([]);
+    setRows(Array.from(new Set(keys)));
+  };
+
   return (
     <S.TableWrapper ref={outsideRef}>
+      <ButtonContainer>
+        <Button onClick={resetHandler}>우선순위 리셋</Button>
+      </ButtonContainer>
+
       <PortalButton handleClick={handleClick} />
       <S.Table>
         <S.Thead>
