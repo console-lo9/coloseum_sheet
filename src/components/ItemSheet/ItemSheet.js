@@ -11,7 +11,6 @@ const ItemSheet = () => {
 
   const [clickedId, setClickedId] = useState();
   const [clickedRowId, setClickedRowId] = useState();
-  const tableData = useSelector((state) => state.data.tableData);
   const sortedData = useSelector((state) => state.sort);
 
   const keys = Object.keys(MOCK_DATA[0]);
