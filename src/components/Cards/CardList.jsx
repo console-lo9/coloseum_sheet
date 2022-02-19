@@ -17,12 +17,10 @@ const CardList = () => {
     } else if (e.currentTarget.id === "downBtn") {
       cardConRef.current.scrollTop += cardHeight * 0.2;
     }
-
-    console.log(e.target);
   };
 
   useEffect(() => {
-    setCardHeight(cardConRef.current.getBoundingClientRect().height);
+    setCardHeight(cardConRef.current.scrollHeight);
   });
   return (
     <>
