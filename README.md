@@ -19,7 +19,9 @@
 
 `React` `javascript` `styled-components` `redux toolkit`
 
-## 🗒 프로젝트 진행 과정
+## 🗒 프로젝트 진행 과정 및 구현 사항
+
+[위키 링크](https://github.com/console-lo9/coloseum_sheet/wiki/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A7%84%ED%96%89-%EA%B3%BC%EC%A0%95)
 
 ### 📍 문제 사항
 
@@ -69,14 +71,21 @@
     <img width="800" src="https://user-images.githubusercontent.com/43867711/154755202-33c01ddd-5803-473a-acf3-d7e8b4a211a6.gif"/>
 
 4. 체크박스 기능으로 행 순서 변경<br/>
-   행을 선택해 사용자가 모아서 보고 싶은 행끼리 볼 수 있도록 구현했습니다.
 
-    <img width="800" src="https://user-images.githubusercontent.com/43867711/154755326-9f0318ff-c490-4048-bf8e-458a04c23eff.gif"/>
+- 행을 선택해 사용자가 모아서 보고 싶은 행끼리 볼 수 있도록 구현했습니다.
+- 우선순위 리셋 버튼으로 설정했던 행 순서를 초기화할 수 있습니다.
+
+  <img width="800" src="https://user-images.githubusercontent.com/43867711/154791073-88531206-cf6a-4e3b-a087-d08b200a132e.gif"/>
 
 5. 정렬 기능<br/>
    행의 데이터를 오름차순, 내림차순으로 정렬할 수 있는 기능을 구현했습니다.
 
     <img width="800" src="https://user-images.githubusercontent.com/43867711/154756516-6ccee25c-9f27-4863-9c2e-3c65314095c1.gif"/>
+
+6. 테이블 클릭 시 상단에 카드 노출<br/>
+   클릭 시 테이블을 카드 형태로 볼 수 있고, 테이블이 아닌 공간을 클릭할 경우 카드가 사라집니다.
+
+    <img width="800" src="https://user-images.githubusercontent.com/43867711/154790924-67d8bd7d-4f98-4d5c-b82b-a4a9e806ea51.gif"/>
 
 #### **카드 뷰**
 
@@ -105,10 +114,11 @@
 
 #### **태블릿 화면**
 
-  <img width="700" src="https://user-images.githubusercontent.com/43867711/154757978-502b3a5c-2816-44a9-ba3a-999f07990c49.jpeg"/>
-  <br/>
-  <br/>
-  <img width="700" src="https://user-images.githubusercontent.com/43867711/154757996-ffd4fb05-7297-4bcf-b0ed-518abbf25b70.jpeg"/>
+![IMG_0721](https://user-images.githubusercontent.com/43867711/154790605-69323b97-87cb-4b6b-bb5b-207b18a96f8c.PNG)
+
+![IMG_0722](https://user-images.githubusercontent.com/43867711/154790609-fc340b18-c259-471b-88aa-6473c9ccf4f3.PNG)
+
+![IMG_0723](https://user-images.githubusercontent.com/43867711/154790613-35e56d9e-d187-40e1-bce6-5b87fd8e1c38.PNG)
 
 ## ⚙ 설치
 
