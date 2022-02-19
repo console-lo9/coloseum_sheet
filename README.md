@@ -21,7 +21,7 @@
 
 ## 🗒 프로젝트 진행 과정 및 구현 사항
 
-[위키 링크](https://github.com/console-lo9/coloseum_sheet/wiki/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A7%84%ED%96%89-%EA%B3%BC%EC%A0%95)
+[위키 링크](https://github.com/console-lo9/coloseum_sheet/wiki/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A7%84%ED%96%89-%EA%B3%BC%EC%A0%95-%EB%B0%8F-%EA%B5%AC%ED%98%84-%EC%82%AC%ED%95%AD)
 
 ## ⚙ 설치
 
