@@ -1,16 +1,16 @@
 <h1 align="center"> 다량 데이터 설계 및 구현 과제 </h1>
 
-<h3 align="center"> 서비스 링크 : https://fervent-tereshkova-9b041a.netlify.app/</h3>
+<h3 align="center"> 서비스 링크 : https://vigilant-rosalind-e05fcd.netlify.app/</h3>
 
 ## 👏 프로젝트 소개
 
-> 최대한 많은 양의 데이터를 확인할 수 있는 화면을 설계하고 구현했습니다.
+> 최대한 많은 양의 데이터 중 자신이 원하는 데이터를 선택하여, 효율적으로 이용할 수 있는 기능을 가진 물류 정보 처리 웹 구현하였습니다.
 
 ## 🙋‍♀️🙋‍♂️ 팀원
 
 |                                           프로필                                           |                    이름                     | 담당 기능 |
 | :----------------------------------------------------------------------------------------: | :-----------------------------------------: | :-------- |
-| <img src="https://avatars.githubusercontent.com/Ubermensch0608" width="100" height="100"/> | [우종원](https://github.com/Ubermensch0608) |           |
+| <img src="https://avatars.githubusercontent.com/Ubermensch0608" width="100" height="100"/> | [우종원](https://github.com/Ubermensch0608) | table_sheet, 데이터라인 하이라이트, 우선순위 리셋  |
 |  <img src="https://avatars.githubusercontent.com/crucial-sub" width="100" height="100"/>   |  [박중섭](https://github.com/crucial-sub)   |           |
 |    <img src="https://avatars.githubusercontent.com/ttaerrim" width="100" height="100"/>    |    [이태림](https://github.com/ttaerrim)    |           |
 |   <img src="https://avatars.githubusercontent.com/penguin311" width="100" height="100"/>   |   [임수영](https://github.com/penguin311)   |           |
