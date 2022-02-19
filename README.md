@@ -1,6 +1,6 @@
 <h1 align="center"> 다량 데이터 설계 및 구현 과제 </h1>
 
-<h3 align="center"> 서비스 링크 : https://fervent-tereshkova-9b041a.netlify.app/</h3>
+<h3 align="center"> 서비스 링크: https://vigilant-rosalind-e05fcd.netlify.app/</h3>
 
 ## 👏 프로젝트 소개
 
