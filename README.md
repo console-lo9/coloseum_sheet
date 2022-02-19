@@ -11,7 +11,7 @@
 |                                           프로필                                           |                    이름                     | 담당 기능                                         |
 | :----------------------------------------------------------------------------------------: | :-----------------------------------------: | :------------------------------------------------ |
 | <img src="https://avatars.githubusercontent.com/Ubermensch0608" width="100" height="100"/> | [우종원](https://github.com/Ubermensch0608) | table_sheet, 데이터라인 하이라이트, 우선순위 리셋 |
-|  <img src="https://avatars.githubusercontent.com/crucial-sub" width="100" height="100"/>   |  [박중섭](https://github.com/crucial-sub)   | 데이터 정렬, 스크롤 버튼                          |
+|  <img src="https://avatars.githubusercontent.com/crucial-sub" width="100" height="100"/>   |  [박중섭](https://github.com/crucial-sub)   | 데이터 정렬, 스크롤 포탈 버튼                          |
 |    <img src="https://avatars.githubusercontent.com/ttaerrim" width="100" height="100"/>    |    [이태림](https://github.com/ttaerrim)    | 카드 뷰 구현, 테이블 우선순위                     |
 |   <img src="https://avatars.githubusercontent.com/penguin311" width="100" height="100"/>   |   [임수영](https://github.com/penguin311)   | 배포                                              |
 
@@ -83,6 +83,8 @@ $ npm start || yarn start
 기획이 중요한 과제였다고 생각합니다. 팀원들과 직접 기획을 하면서 사용자 입장에서 생각해볼 수 있는 계기가 되었고, 앞으로 어떤 것이 사용자가 정말로 원하는 기능일까 생각하면서 개발을 할 수 있을 거 같습니다.
 
 ### **박중섭** ✨
+
+기획 단계에서 팀원들과 사용자 시점의 사이트 편의성에 대해 깊은 논의를 나누었고 이를 해결하기 위한 많은 아이디어를 공유한 후 해당 기능들을 실제로 구현하는데 성공하였습니다. 개발에 앞서 사용자의 입장에서 팀원들과 함께 고민할 수 있었던 의미있는 프로젝트였습니다.
 
 ### **이태림** 🐯
 
