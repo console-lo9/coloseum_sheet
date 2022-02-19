@@ -1,12 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 import { CgChevronDoubleUpO, CgChevronDoubleDownO } from "react-icons/cg";
 import * as Constants from "constants";
 
 const PortalButton = ({ handleClick, cardView }) => {
-  console.log(cardView);
   return (
-    <>
+    <Fragment>
       <UpBtnBox
         onClick={handleClick}
         id="upBtn"
@@ -21,7 +20,7 @@ const PortalButton = ({ handleClick, cardView }) => {
       >
         <CgChevronDoubleDownO />
       </DownBtnBox>
-    </>
+    </Fragment>
   );
 };
 

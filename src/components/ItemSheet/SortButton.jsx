@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
 import { sortDataActions } from "store/sortDataSlice";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
@@ -20,7 +20,7 @@ const SortButton = ({ columnName, index, selColumn, setSelColumn }) => {
     setSelColumn(index);
   };
   return (
-    <>
+    <Fragment>
       <S.SortLabel
         htmlFor={columnName}
         className={index === selColumn ? "active" : ""}
@@ -28,7 +28,7 @@ const SortButton = ({ columnName, index, selColumn, setSelColumn }) => {
         {isAscending ? <AiFillCaretDown /> : <AiFillCaretUp />}
       </S.SortLabel>
       <S.SortBtn id={columnName} onClick={handleClick}></S.SortBtn>
-    </>
+    </Fragment>
   );
 };
 
