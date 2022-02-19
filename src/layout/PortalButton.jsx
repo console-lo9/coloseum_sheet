@@ -41,6 +41,9 @@ const UpBtnBox = styled.div`
     top: 150px;
     left: 90%;
   }
+  svg {
+    pointer-events: none;
+  }
 `;
 const DownBtnBox = styled.div`
   position: sticky;
@@ -58,6 +61,9 @@ const DownBtnBox = styled.div`
   &.cardView {
     top: 250px;
     left: 90%;
+  }
+  svg {
+    pointer-events: none;
   }
 `;
 

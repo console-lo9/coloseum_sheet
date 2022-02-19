@@ -2,25 +2,25 @@ import MOCK_DATA from "assets/MOCK_DATA.json";
 import Card from "./Card.jsx";
 import styled from "styled-components";
 import PortalButton from "layout/PortalButton.jsx";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const CardList = () => {
   const cardConRef = useRef();
+  const [cardHeight, setCardHeight] = useState();
 
   const handleClick = (e) => {
     if (e.currentTarget.id === "upBtn") {
-      window.scrollTo(
-        0,
-        window.scrollY - cardConRef.current.scrollHeight * 0.2
-      );
+      cardConRef.current.scrollTop -= cardHeight * 0.2;
     } else if (e.currentTarget.id === "downBtn") {
-      window.scrollTo(
-        0,
-        window.scrollY + cardConRef.current.scrollHeight * 0.2
-      );
+      cardConRef.current.scrollTop += cardHeight * 0.2;
     }
+
+    console.log(e.target);
   };
 
+  useEffect(() => {
+    setCardHeight(cardConRef.current.getBoundingClientRect().height);
+  });
   return (
     <>
       <PortalButton handleClick={handleClick} cardView="cardView" />
