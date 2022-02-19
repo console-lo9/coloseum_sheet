@@ -105,10 +105,11 @@
 
 #### **태블릿 화면**
 
-  <img width="700" src="https://user-images.githubusercontent.com/43867711/154757978-502b3a5c-2816-44a9-ba3a-999f07990c49.jpeg"/>
-  <br/>
-  <br/>
-  <img width="700" src="https://user-images.githubusercontent.com/43867711/154757996-ffd4fb05-7297-4bcf-b0ed-518abbf25b70.jpeg"/>
+![IMG_0721](https://user-images.githubusercontent.com/43867711/154790605-69323b97-87cb-4b6b-bb5b-207b18a96f8c.PNG)
+
+![IMG_0722](https://user-images.githubusercontent.com/43867711/154790609-fc340b18-c259-471b-88aa-6473c9ccf4f3.PNG)
+
+![IMG_0723](https://user-images.githubusercontent.com/43867711/154790613-35e56d9e-d187-40e1-bce6-5b87fd8e1c38.PNG)
 
 ## ⚙ 설치
 
