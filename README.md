@@ -8,12 +8,12 @@
 
 ## 🙋‍♀️🙋‍♂️ 팀원
 
-|                                           프로필                                           |                    이름                     | 담당 기능 |
-| :----------------------------------------------------------------------------------------: | :-----------------------------------------: | :-------- |
-| <img src="https://avatars.githubusercontent.com/Ubermensch0608" width="100" height="100"/> | [우종원](https://github.com/Ubermensch0608) | table_sheet, 데이터라인 하이라이트, 우선순위 리셋  |
-|  <img src="https://avatars.githubusercontent.com/crucial-sub" width="100" height="100"/>   |  [박중섭](https://github.com/crucial-sub)   |           |
-|    <img src="https://avatars.githubusercontent.com/ttaerrim" width="100" height="100"/>    |    [이태림](https://github.com/ttaerrim)    |           |
-|   <img src="https://avatars.githubusercontent.com/penguin311" width="100" height="100"/>   |   [임수영](https://github.com/penguin311)   |           |
+|                                           프로필                                           |                    이름                     | 담당 기능                                         |
+| :----------------------------------------------------------------------------------------: | :-----------------------------------------: | :------------------------------------------------ |
+| <img src="https://avatars.githubusercontent.com/Ubermensch0608" width="100" height="100"/> | [우종원](https://github.com/Ubermensch0608) | table_sheet, 데이터라인 하이라이트, 우선순위 리셋 |
+|  <img src="https://avatars.githubusercontent.com/crucial-sub" width="100" height="100"/>   |  [박중섭](https://github.com/crucial-sub)   | 데이터 정렬, 스크롤 버튼                          |
+|    <img src="https://avatars.githubusercontent.com/ttaerrim" width="100" height="100"/>    |    [이태림](https://github.com/ttaerrim)    | 카드 뷰 구현, 테이블 우선순위                     |
+|   <img src="https://avatars.githubusercontent.com/penguin311" width="100" height="100"/>   |   [임수영](https://github.com/penguin311)   | 배포                                              |
 
 ## 🚀 스택
 
@@ -85,5 +85,7 @@ $ npm start || yarn start
 ### **박중섭** ✨
 
 ### **이태림** 🐯
+
+기존 과제와 달리 설계부터 시작해야 해 어렵기도 했지만 직접 유저의 입장에서 생각해 보며 어떻게 하면 더 좋은 UI/UX를 선사할 수 있을까 고민할 수 있었던 과제였습니다. Figma를 사용해 디자인부터 구현하는 게 낯설었으나, 확실히 틀을 우선 잡아 놓고 개발을 하는 게 시간 절약 면에서 더 도움이 된다는 생각을 직접 경험해 본 프로젝트가 됐습니다.
 
 ### **임수영** 🐧
