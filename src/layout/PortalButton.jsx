@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { CgChevronDoubleUpO, CgChevronDoubleDownO } from "react-icons/cg";
+import * as Constants from "constants";
 
 const PortalButton = ({ handleClick, cardView }) => {
   console.log(cardView);
@@ -34,11 +35,11 @@ const UpBtnBox = styled.div`
   margin-top: -50px;
   top: 60px;
   left: 88%;
-  @media screen and (max-width: 1024px) {
+  @media ${Constants.mobile} {
     left: 90%;
   }
   &.cardView {
-    top: 150px;
+    top: 200px;
     left: 90%;
   }
   svg {
@@ -55,11 +56,11 @@ const DownBtnBox = styled.div`
   margin-top: -50px;
   top: 160px;
   left: 88%;
-  @media screen and (max-width: 1024px) {
+  @media ${Constants.mobile} {
     left: 90%;
   }
   &.cardView {
-    top: 250px;
+    top: 300px;
     left: 90%;
   }
   svg {
