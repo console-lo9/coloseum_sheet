@@ -1,10 +1,11 @@
 import { Fragment, useState } from "react";
+
 import Cards from "components/Cards";
 import ItemSheet from "components/ItemSheet";
-import { AiOutlineTable } from "react-icons/ai";
+
 import { BiCard } from "react-icons/bi";
-import styled from "styled-components";
-import * as Constants from "constants";
+import { AiOutlineTable } from "react-icons/ai";
+import * as S from "./styles";
 
 const TABLE = "table";
 const CARD = "card";
@@ -20,40 +21,17 @@ const SelectView = () => {
   };
   return (
     <Fragment>
-      <ButtonContainer>
-        <ButtonDiv value={TABLE} onClick={viewHandler}>
+      <S.ButtonContainer>
+        <S.ButtonDiv value={TABLE} onClick={viewHandler}>
           <AiOutlineTable size={30} />
-        </ButtonDiv>
-        <ButtonDiv value={CARD} onClick={viewHandler}>
+        </S.ButtonDiv>
+        <S.ButtonDiv value={CARD} onClick={viewHandler}>
           <BiCard size={30} />
-        </ButtonDiv>
-      </ButtonContainer>
+        </S.ButtonDiv>
+      </S.ButtonContainer>
       {view === TABLE ? <ItemSheet /> : <Cards />}
     </Fragment>
   );
 };
 
-export const ButtonContainer = styled.div`
-  display: inline-flex;
-  justify-content: flex-end;
-  margin-bottom: 5px;
-`;
-const ButtonDiv = styled.button`
-  border-radius: 5px;
-  padding: 1px 3px;
-  margin-left: 3px;
-  &:nth-child(1),
-  &:nth-child(2) {
-    color: ${Constants.GRAY2};
-  }
-  &:hover {
-    &:nth-child(1),
-    &:nth-child(2) {
-      color: ${Constants.BLUE};
-    }
-  }
-  svg {
-    pointer-events: none;
-  }
-`;
 export default SelectView;
