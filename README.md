@@ -21,6 +21,8 @@
 
 ## 🗒 프로젝트 진행 과정
 
+[위키 링크](https://github.com/console-lo9/coloseum_sheet/wiki/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A7%84%ED%96%89-%EA%B3%BC%EC%A0%95)
+
 ### 📍 문제 사항
 
 - 많은 양의 정보를 화면에 보여 줘야 함
