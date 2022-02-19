@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { CgChevronDoubleUpO, CgChevronDoubleDownO } from "react-icons/cg";
-import { useSelector } from "react-redux";
 
 const PortalButton = ({ handleClick, cardView }) => {
   console.log(cardView);
@@ -42,6 +41,9 @@ const UpBtnBox = styled.div`
     top: 150px;
     left: 90%;
   }
+  svg {
+    pointer-events: none;
+  }
 `;
 const DownBtnBox = styled.div`
   position: sticky;
@@ -59,6 +61,9 @@ const DownBtnBox = styled.div`
   &.cardView {
     top: 250px;
     left: 90%;
+  }
+  svg {
+    pointer-events: none;
   }
 `;
 

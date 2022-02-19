@@ -2,8 +2,6 @@
 
 <h3 align="center"> 서비스 링크 : https://fervent-tereshkova-9b041a.netlify.app/</h3>
 
-<p align="center"><img width="500" src="https://bit.ly/3HyINHE" /></p>
-
 ## 👏 프로젝트 소개
 
 > 최대한 많은 양의 데이터를 확인할 수 있는 화면을 설계하고 구현했습니다.
@@ -46,7 +44,9 @@
 
 하는 기능을 추가하기로 했습니다.
 
-따라서 저희는 사용자에게 많은 데이터를 대략적으로 볼 때 유리한 **테이블 뷰**와 원하는 데이터를 자세하게 볼 때 유리한 **카드 뷰**를 모두 제공하는 방안을 선택했습니다.
+> 따라서 저희는 사용자에게 많은 데이터를 대략적으로 볼 때 유리한 **테이블 뷰**와 원하는 데이터를 자세하게 볼 때 유리한 **카드 뷰**를 모두 제공하는 방안을 선택했습니다.
+
+[피그마 링크](https://www.figma.com/file/KUgomPySmmGc8ZoeO5nuhr/%EB%AC%BC%EB%A5%98-%EC%A0%95%EB%B3%B4-%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%8B%9C%EC%95%88?node-id=38%3A5251)
 
 ### 구현 사항
 
@@ -86,8 +86,11 @@
     <img width="800" src="https://user-images.githubusercontent.com/43867711/154757470-89f56b0e-e030-4967-86b6-44cbbc0cac95.gif"/>
 
 2.  카드 뷰 초기 화면<br/>
-    상태를 구분할 수 있다면 텍스트의 색깔을 다르게 표시해 사용자가 데이터를 더 빨리 파악할 수 있도록 합니다.
-    <img width="800" src="https://user-images.githubusercontent.com/43867711/154757059-33f7d35b-d13c-4bdc-8ab7-588b07e9b74e.png"/>
+
+- 항상 모든 값이 동일한 위치에 있도록 항목이 null인 값도 그대로 표시했습니다.
+- 상태를 구분할 수 있다면 텍스트의 색깔을 다르게 표시해 사용자가 데이터를 더 빨리 파악할 수 있도록 합니다.
+
+  <img width="800" src="https://user-images.githubusercontent.com/43867711/154757059-33f7d35b-d13c-4bdc-8ab7-588b07e9b74e.png"/>
 
 #### **공통 기능**
 
@@ -142,48 +145,19 @@ $ npm start || yarn start
   },
 ```
 
-## 📂 파일 구조
+## 📂 프로젝트 구조
 
-    ├── README.md
-    ├── jsconfig.json
-    ├── package.json
     ├── public
-    │   ├── index.html
-    │   └── robots.txt
-    ├── src
-    │   ├── App.js
-    │   ├── assets
-    │   │   └── MOCK_DATA.json
-    │   ├── components
-    │   │   ├── Cards
-    │   │   ├── ItemSheet
-    │   │   └── SelectView
-    │   ├── constants
-    │   │   ├── color.js
-    │   │   ├── index.js
-    │   │   ├── mockdataKeys.js
-    │   │   └── reponsive.js
-    │   ├── index.js
-    │   ├── layout
-    │   │   ├── MainPage.jsx
-    │   │   └── PortalButton.jsx
-    │   ├── store
-    │   │   ├── currentRowSlice.js
-    │   │   ├── index.js
-    │   │   ├── sortDataSlice.js
-    │   │   └── tableSlice.js
-    │   └── style
-    │       └── GlobalStyle.js
-    └── yarn.lock
-
-> 작성 후 삭제
-> 참고 (https://www.lesstif.com/lpt/linux-tree-54952142.html)
->
-> ```
-> $ tree -N -L 2 -d -I "node_modules"
-> ```
->
-> 또는 vscode File-tree-generator extension 사용
+    └── src
+        ├── assets
+        ├── components
+        │   ├── Cards
+        │   ├── ItemSheet
+        │   └── SelectView
+        ├── constants
+        ├── layout
+        ├── store
+        └── style
 
 ## 💡 과제 후기
 
