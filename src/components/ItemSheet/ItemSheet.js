@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import SortButton from "./SortButton";
 import { setCurrentRow } from "store/currentRowSlice";
-import PortalButton from "layout/PortalButton";
 import * as Constants from "constants";
+import PortalButton from "layout/PortalButton";
 
 const ItemSheet = () => {
   const dispatch = useDispatch();
@@ -23,6 +23,7 @@ const ItemSheet = () => {
 
   const tableRef = useRef();
   const [tableHeight, setTableHeight] = useState();
+
 
   const clickHandler = () => {
     dispatch(setCurrentRow(clickedRowId));
