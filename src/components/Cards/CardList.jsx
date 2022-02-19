@@ -1,12 +1,15 @@
-import MOCK_DATA from "assets/MOCK_DATA.json";
 import Card from "./Card.jsx";
 import styled from "styled-components";
 import PortalButton from "layout/PortalButton.jsx";
 import { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
+import SortCard from "./SortCard.jsx";
 
 const CardList = () => {
   const cardConRef = useRef();
   const [cardHeight, setCardHeight] = useState();
+
+  const sortedData = useSelector((state) => state.sort);
 
   const handleClick = (e) => {
     if (e.currentTarget.id === "upBtn") {
@@ -23,9 +26,10 @@ const CardList = () => {
   });
   return (
     <>
+      <SortCard />
       <PortalButton handleClick={handleClick} cardView="cardView" />
       <CardContainer ref={cardConRef}>
-        {Object.entries(MOCK_DATA).map((data, index) => (
+        {Object.entries(sortedData).map((data, index) => (
           <Card key={index} data={data[1]} />
         ))}
       </CardContainer>
