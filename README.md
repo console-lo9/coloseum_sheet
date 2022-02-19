@@ -12,7 +12,7 @@
 | :----------------------------------------------------------------------------------------: | :-----------------------------------------: | :------------------------------------------------ |
 | <img src="https://avatars.githubusercontent.com/Ubermensch0608" width="100" height="100"/> | [우종원](https://github.com/Ubermensch0608) | table_sheet, 데이터라인 하이라이트, 우선순위 리셋 |
 |  <img src="https://avatars.githubusercontent.com/crucial-sub" width="100" height="100"/>   |  [박중섭](https://github.com/crucial-sub)   | 데이터 정렬, 스크롤 포탈 버튼                          |
-|    <img src="https://avatars.githubusercontent.com/ttaerrim" width="100" height="100"/>    |    [이태림](https://github.com/ttaerrim)    | 카드 뷰 구현, 테이블 우선순위                     |
+|    <img src="https://avatars.githubusercontent.com/ttaerrim" width="100" height="100"/>    |   ⭐[이태림](https://github.com/ttaerrim)    | 카드 뷰 구현, 테이블 우선순위                     |
 |   <img src="https://avatars.githubusercontent.com/penguin311" width="100" height="100"/>   |   [임수영](https://github.com/penguin311)   | 배포                                              |
 
 ## 🚀 스택
