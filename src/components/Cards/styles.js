@@ -109,3 +109,29 @@ export const Button = styled.button`
     font-size: 12px;
   }
 `;
+
+/* SortCard.jsx */
+export const SortContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+export const ButtonContainer = styled.div`
+  margin-left: 5px;
+`;
+
+export const AscendingButton = styled.button`
+  border: 1px solid ${Constants.GRAY3};
+  border-radius: 10px;
+  padding: 10px;
+  color: ${Constants.GRAY2};
+
+  ${({ isTrue }) => {
+    if (isTrue) {
+      return css`
+        display: none;
+      `;
+    }
+  }}
+`;

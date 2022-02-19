@@ -92,6 +92,10 @@
 
   <img width="800" src="https://user-images.githubusercontent.com/43867711/154757059-33f7d35b-d13c-4bdc-8ab7-588b07e9b74e.png"/>
 
+3. 카드 정렬 기능<br/>
+   기준을 선택해 정렬할 수 있습니다.
+   <img width="800" src="https://user-images.githubusercontent.com/43867711/154788342-02f6d743-092c-40f3-abf8-34c252daad22.gif"/>
+
 #### **공통 기능**
 
 1.  스크롤 버튼 <br/>
