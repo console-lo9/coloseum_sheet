@@ -1,6 +1,8 @@
 import React, { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { sortDataActions } from "store/sortDataSlice";
+
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import * as S from "./styles";
 
