@@ -69,9 +69,11 @@
     <img width="800" src="https://user-images.githubusercontent.com/43867711/154755202-33c01ddd-5803-473a-acf3-d7e8b4a211a6.gif"/>
 
 4. 체크박스 기능으로 행 순서 변경<br/>
-   행을 선택해 사용자가 모아서 보고 싶은 행끼리 볼 수 있도록 구현했습니다.
 
-    <img width="800" src="https://user-images.githubusercontent.com/43867711/154755326-9f0318ff-c490-4048-bf8e-458a04c23eff.gif"/>
+- 행을 선택해 사용자가 모아서 보고 싶은 행끼리 볼 수 있도록 구현했습니다.
+- 우선순위 리셋 버튼으로 설정했던 행 순서를 초기화할 수 있습니다.
+
+  <img width="800" src="https://user-images.githubusercontent.com/43867711/154791073-88531206-cf6a-4e3b-a087-d08b200a132e.gif"/>
 
 5. 정렬 기능<br/>
    행의 데이터를 오름차순, 내림차순으로 정렬할 수 있는 기능을 구현했습니다.
